@@ -6,13 +6,13 @@
 /*   By: thmelen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 15:26:11 by thmelen           #+#    #+#             */
-/*   Updated: 2018/04/10 20:49:12 by thmelen          ###   ########.fr       */
+/*   Updated: 2018/04/13 05:53:05 by thmelen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strslct(char const *s, char c, int *start, int *end)
+static	void	ft_strslct(char const *s, char c, int *start, int *end)
 {
 	while (s[*start] == c)
 		(*start)++;
@@ -21,7 +21,7 @@ void	ft_strslct(char const *s, char c, int *start, int *end)
 		(*end)++;
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**words;
 	int		start;
