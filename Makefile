@@ -66,9 +66,27 @@ ft_putendl_fd.c \
 ft_putnbr_fd.c \
 ft_lstnew.c \
 ft_lstdelone.c \
+ft_lstdel.c \
+ft_lstadd.c \
+ft_lstiter.c \
+ft_lstmap.c \
 ft_swap.c \
 ft_strrev.c \
 ft_cntword.c \
+ft_len_nb.c \
+ft_list_clear.c \
+ft_isblank.c \
+ft_isspace.c \
+ft_isupper.c \
+ft_islower.c \
+ft_str_is_alpha.c \
+ft_str_is_numeric.c \
+ft_str_is_lowercase.c \
+ft_str_is_uppercase.c \
+ft_str_is_printable.c \
+ft_strupcase.c \
+ft_strlowcase.c \
+ft_abs.c
 
 OBJS = $(SRCS:.c=.o)
 CC = gcc

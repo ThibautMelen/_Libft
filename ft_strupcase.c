@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thmelen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/09 19:10:54 by thmelen           #+#    #+#             */
-/*   Updated: 2018/04/10 21:08:36 by thmelen          ###   ########.fr       */
+/*   Created: 2018/04/13 05:07:01 by thmelen           #+#    #+#             */
+/*   Updated: 2018/04/13 05:07:29 by thmelen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_itoa(int nb)
+char	*ft_strupcase(char *str)
 {
-	long long	number;
-	char		*dest;
-	int			i;
+	int i;
 
-	number = (long long)nb;
 	i = 0;
-	if (!(dest = ft_strnew(ft_len_nb(number))))
-		return (NULL);
-	if (number < 0)
-		number *= -1;
-	while (number != 0 || i == 0)
+	while (str[i])
 	{
-		dest[i] = (number % 10) + '0';
-		number /= 10;
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
 		i++;
 	}
-	if (nb < 0)
-		dest[i++] = '-';
-	dest[i] = '\0';
-	return (ft_strrev(dest));
+	return (str);
 }
