@@ -11,7 +11,9 @@
 # **************************************************************************** #
 
 NAME = libft.a
-INC = .
+INCS_DIR = includes/
+SRCS_DIR = srcs/
+OBJS_DIR = objs/
 SRCS = ft_memset.c \
 ft_bzero.c \
 ft_memcpy.c \
@@ -88,12 +90,15 @@ ft_strupcase.c \
 ft_strlowcase.c \
 ft_abs.c
 
-OBJS = $(SRCS:.c=.o)
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+OBJS = $(addprefix $(OBJS_DIR),$(SRCS:.c=.o))
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -I $(INC)
+$(OBJS_DIR)%.o: $(SRCS_DIR)%.c
+	@mkdir -p $(OBJS_DIR)
+	$(CC) $(CFLAGS) -I $(INCS_DIR) -o $@ -c $<
+
+CC = gcc
+
+CFLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
@@ -102,7 +107,7 @@ $(NAME): $(OBJS)
 	ranlib $(NAME)
 
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJS_DIR)
 
 fclean: clean
 	rm -rf $(NAME)
