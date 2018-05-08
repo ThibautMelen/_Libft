@@ -6,19 +6,35 @@
 /*   By: thmelen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 20:37:19 by thmelen           #+#    #+#             */
-/*   Updated: 2018/04/13 05:26:53 by thmelen          ###   ########.fr       */
+/*   Updated: 2018/05/08 22:10:55 by thmelen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
 
 # define TRUE 1
 # define FALSE 0
+# define BUFF_SIZE 32
+# define FD content_size
+# define STR_TMP content
+# define TO_SPLIT '\n'
+# define LINE_IS_READ 1
+# define LINE_END_READ 0
+# define LINE_ERROR_READ -1
+# define NO_ERROR 0
+# define OPEN_FILE_ERROR -5
+# define READ_FILE_ERROR -6
+# define BUFF_ERROR -7
+# define CONTENT_ERROR -8
+# define MALLOC_ERROR -42
 
 typedef	struct		s_list
 {
@@ -45,7 +61,7 @@ char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *str, const char *to_find);
 char				*ft_strnstr(const char *str, const char *to_find, \
-					size_t len);
+		size_t len);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *str);
@@ -103,5 +119,10 @@ int					ft_str_is_printable(char *str);
 char				*ft_strupcase(char *str);
 char				*ft_strlowcase(char *str);
 size_t				ft_abs(int nb);
+char				*ft_read_file(int fd);
+int					ft_open_file(char *path);
+int					ft_exit_program(int status);
+void				ft_show_usage(const char *name);
+int					ft_get_next_line(const int fd, char **line);
 
 #endif
