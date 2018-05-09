@@ -16,5 +16,4 @@ void		ft_puterror(const char *name)
 {
 	ft_putstr("\033[31m[ ✘ ] ");
 	ft_putstr(name);
-	ft_exit_program(EXIT_SUCCESS);
 }
