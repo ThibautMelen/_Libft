@@ -34,6 +34,7 @@
 # define READ_FILE_ERROR -6
 # define BUFF_ERROR -7
 # define CONTENT_ERROR -8
+# define INIT_ERROR -9
 # define MALLOC_ERROR -42
 
 typedef	struct		s_list
