@@ -14,7 +14,7 @@
 
 void		ft_show_usage(const char *name)
 {
-	ft_putstr("\033[31m[ ✘ ] usage: ");
+	ft_puterror("usage: ");
 	ft_putstr(name);
 	ft_putendl(" {file}\n");
 	ft_exit_program(NO_ERROR);

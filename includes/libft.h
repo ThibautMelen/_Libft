@@ -6,7 +6,7 @@
 /*   By: thmelen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 20:37:19 by thmelen           #+#    #+#             */
-/*   Updated: 2018/05/08 22:10:55 by thmelen          ###   ########.fr       */
+/*   Updated: 2018/05/09 16:34:00 by thmelen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ char				*ft_read_file(int fd);
 int					ft_open_file(char *path);
 int					ft_exit_program(int status);
 void				ft_show_usage(const char *name);
+void				ft_puterror(const char *name);
 int					ft_get_next_line(const int fd, char **line);
 
 #endif

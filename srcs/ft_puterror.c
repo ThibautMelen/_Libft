@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit_program.c                                     :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thmelen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/08 21:58:28 by thmelen           #+#    #+#             */
-/*   Updated: 2018/05/08 21:59:16 by thmelen          ###   ########.fr       */
+/*   Created: 2018/05/09 16:30:19 by thmelen           #+#    #+#             */
+/*   Updated: 2018/05/09 16:36:11 by thmelen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_exit_program(int status)
+void		ft_puterror(const char *name)
 {
-	if (status != NO_ERROR)
-	{
-		ft_puterror("error (");
-		ft_putnbr(status);
-		ft_putchar(')');
-		ft_putchar('\n');
-	}
-	exit(status);
+	ft_putstr("\033[31m[ ✘ ] ");
+	ft_putstr(name);
+	ft_exit_program(EXIT_SUCCESS);
 }

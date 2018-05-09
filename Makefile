@@ -93,6 +93,7 @@ ft_read_file.c \
 ft_open_file.c \
 ft_exit_program.c \
 ft_show_usage.c \
+ft_puterror.c \
 ft_get_next_line.c
 
 OBJS = $(addprefix $(OBJS_DIR),$(SRCS:.c=.o))
