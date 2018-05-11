@@ -62,7 +62,7 @@ static t_list	*get_create_fd(t_list **save_list, const int fd)
 	return (actual_list);
 }
 
-int				get_next_line(const int fd, char **line)
+int				ft_get_next_line(const int fd, char **line)
 {
 	static t_list	*save_list;
 	t_list			*this_file;
